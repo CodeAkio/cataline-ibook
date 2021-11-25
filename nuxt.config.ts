@@ -38,10 +38,17 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
   ],
 
   styleResources: {
     scss: ['@/components/bosons/*.scss'],
+  },
+
+  axios: {
+    baseURL: process.env.NODE_ENV === 'production'
+      ? ''
+      : 'http://localhost:3333'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
